@@ -1,0 +1,11 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int l=nums.length;
+        int ar[]=new int[l];int count=0;
+        for(int x=0;x<l;x++)
+        if(nums[x]!=val)
+        ar[count++]=nums[x];
+        System.arraycopy(ar,0,nums,0,count);
+        return count;
+    }
+}

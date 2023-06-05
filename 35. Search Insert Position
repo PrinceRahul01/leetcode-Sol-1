@@ -1,0 +1,15 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int i=Arrays.binarySearch(nums,target);
+        if(i>=0)
+        return i;
+        else
+        {
+            i=0;
+            for(int x=0;x<nums.length;x++)
+            if(nums[x]<target)
+            i++;
+        }
+        return i;
+    }
+}

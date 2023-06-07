@@ -1,0 +1,22 @@
+class Solution {
+    public int minFlips(int a, int b, int c) {
+        int countChange=0;
+        while(c!=0 || a!=0 || b!=0)
+        {
+            int lba=0,lbb=0,lbc=0;
+            lba=a&1;
+            lbb=b&1;
+            lbc=c&1;
+            a>>=1;b>>=1;c>>=1;
+            if(lba==lbb && lba==1 && lbc==0)
+            countChange+=2;
+            if(lba==lbb && lba==0 && lbc==1)
+            countChange+=1;
+            if(lba==lbc && lba==0 && lbb==1)
+            countChange+=1;
+            if(lba==1 && lbb==lbc && lbb==0)
+            countChange+=1;
+        }
+        return countChange;
+    }
+}

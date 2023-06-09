@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isHappy(int n) {
+        if(n==7)
+        return true;
+        while(n>9)
+        {
+            int t=n,s=0;
+            while(t!=0)
+            {
+                s=s+(t%10)*(t%10);
+                t/=10;
+            }
+            n=s;
+            if(n==7)
+            return true;
+        }
+        if(n==1)
+        return true;
+        return false;
+    }
+}

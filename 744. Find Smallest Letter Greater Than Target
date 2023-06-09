@@ -1,0 +1,30 @@
+class Solution {
+    public char nextGreatestLetter(char[] letters, char target) {
+        boolean found=false;int index=-1;
+        if(target=='z')
+        return letters[0];
+        if(target==letters[letters.length-1])
+        return letters[0];
+        for(int i=0;i<letters.length;i++)
+        {
+            if(letters[i]==target)
+            {
+            found=true;
+            index=i+1;
+            if(letters[i]!=letters[i+1])
+            break;
+            }
+            if(letters[i]>target)
+            {
+                found=true;
+                index=i;
+                break;
+            }
+        }
+        if(found)
+        return letters[index];
+        else
+        return letters[0];
+
+    }
+}

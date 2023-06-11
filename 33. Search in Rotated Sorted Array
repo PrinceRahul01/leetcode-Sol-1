@@ -1,0 +1,10 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int index=-1;
+        for(int x=0;x<nums.length;x++){
+            if(nums[x]==target)
+            index=x;
+        }
+        return index;
+    }
+}

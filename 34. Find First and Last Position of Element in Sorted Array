@@ -1,0 +1,31 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        boolean found=false;
+        int l=nums.length;
+        int sindex=-1,lindex=-1;
+        for(int x=0;x<l;x++){
+            if(nums[x]==target){
+                sindex=x;
+                found=true;
+                break;
+            }
+        }
+        for(int x=l-1;x>=0;x--){
+            if(nums[x]==target){
+                lindex=x;
+                found=true;
+                break;
+            }
+        }
+        if(found)
+        {
+            int ar[]={sindex,lindex};
+            return ar;
+        }
+        else
+        {
+            int ar[]={-1,-1};
+            return ar;
+        }
+    }
+}

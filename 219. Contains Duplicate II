@@ -1,0 +1,13 @@
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        int l=nums.length;
+        for(int x=0;x<l;x++){
+            for(int y=x+1;y<=x+k&&y<l;y++)
+            {
+                if(nums[x]==nums[y])
+                return true;
+            }
+        }
+        return false;
+    }
+}

@@ -1,0 +1,16 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        Arrays.sort(nums);
+        boolean found=false;
+        for(int x=0;x<nums.length;x++){
+            if(nums[x]!=x){
+                found=true;
+                return x;
+            }
+        }
+        if(found==false){
+            return nums.length;
+        }
+        return -1;
+    }
+}

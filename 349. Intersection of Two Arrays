@@ -1,0 +1,16 @@
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        int m=nums1.length,n=nums2.length;
+        ArrayList<Integer> ob=new ArrayList<>();
+        for(int x=0;x<m;x++){
+            for(int y=0;y<n;y++){
+                if(nums1[x]==nums2[y] && ob.indexOf(nums1[x])==-1)
+                ob.add(nums1[x]);
+            }
+        }
+        int arr[]=new int[ob.size()];
+        for(int x=0;x<arr.length;x++)
+        arr[x]=ob.get(x);
+        return arr;
+    }
+}

@@ -1,0 +1,33 @@
+class Solution 
+{
+    public int lengthOfLongestSubstring(String s) 
+    {
+        Stack<Character> stk=new Stack<>();
+        int l=s.length();
+        int ls=-1;
+        if(l<=1)
+        return l;
+        for(int x=0;x<l;x++)
+        {
+            char c=s.charAt(x);
+            if(stk.search(c)==-1){
+                stk.push(c);
+            }
+            else
+            {
+                if(ls<stk.size())
+                ls=stk.size();
+                int ti=stk.indexOf(c);
+                if(stk.size()>1)
+                for(int q=ti;q>=0;q--)
+                stk.remove(q);
+                else
+                stk.pop();
+                stk.push(c);
+            }
+        }
+        if(ls<stk.size())
+        ls=stk.size();
+        return ls;
+    }
+}

@@ -1,0 +1,28 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        int count_nine=0;
+        int l=digits.length;
+        for(int x=l-1;x>=0;x--){
+            if(digits[x]==9)
+            count_nine++;
+            else
+            break;
+
+        }
+        if(count_nine<l){
+            for(int x=l-count_nine;x<l;x++)
+            digits[x]=0;
+            ++digits[l-1-count_nine];
+        }
+        else
+        {
+            int tmp[]=new int[l+1];
+            tmp[0]=1;
+            for(int x=1;x<=l;x++){
+                tmp[x]=0;
+            }
+            return tmp;
+        }
+        return digits;
+    }
+}

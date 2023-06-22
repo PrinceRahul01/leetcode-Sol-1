@@ -1,0 +1,25 @@
+class Solution {
+    public String reverseWords(String s) {
+        s=s.trim();
+        int l=s.length();
+        String res="";
+        String wrd="";
+        boolean spc=true;
+        for(int x=0;x<l;x++){
+            char c=s.charAt(x);
+            if(Character.isLetter(c)||Character.isDigit(c)){
+                wrd=wrd+c;
+                spc=true;
+            }
+            else if(spc)
+            {
+                res=wrd+" "+res;
+                wrd="";
+                spc=false;
+            }
+        }
+        res=wrd+" "+res;
+        
+        return res.trim();
+    }
+}

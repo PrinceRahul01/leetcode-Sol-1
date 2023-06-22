@@ -1,0 +1,26 @@
+class Solution {
+    public boolean isFascinating(int n) {
+        long t=n*1000000+n*2*1000+n*3;
+        if(n*3>1000)
+        return false;
+        long q=t;
+        for(char x=1;x<=9;x++)
+        {
+            int c=0;
+            long z=t;
+            int d=(int)q%10;
+            q/=10;
+            for(int y=1;y<=9;y++){
+                int dd=(int)z%10;
+                z/=10;
+                if(dd==d)
+                c++;
+                if(dd==0)
+                return false;
+            }
+            if(c>1)
+            return false;
+        } 
+        return true;
+    }
+}

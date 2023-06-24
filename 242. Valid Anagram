@@ -1,0 +1,21 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        for(char c='a';c<='z';c++)
+        {
+            int a=0,b=0;
+            for(int x=0;x<s.length();x++)
+            {
+                if(s.charAt(x)==c)
+                a++;
+            }
+            for(int x=0;x<t.length();x++)
+            {
+                if(t.charAt(x)==c)
+                b++;
+            }
+            if(a!=b)
+            return false;
+        }
+        return true;
+    }
+}
